@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>La Sabiduría que Heredamos | 112 Recetas de las Abuelas Mexicanas</title>
+<meta name="description" content="112 recetas naturales de las abuelas mexicanas. Remedios que funcionaron por generaciones, ahora con instrucciones paso a paso."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ── Variables ───────────────────────────────── */
+:root{
+  --bg:       #FBF5EC;
+  --papel:    #FFFCF5;
+  --verde:    #1A3A1A;
+  --verde-m:  #2C5A2C;
+  --oro:      #B8892A;
+  --oro-c:    #D4AA50;
+  --oro-p:    #F0DFA0;
+  --vino:     #6B1A14;
+  --texto:    #2A1E10;
+  --gris:     #5A4A38;
+  --blanco:   #FFFDF8;
+  --sombra:   0 16px 40px rgba(42,30,16,.13);
+}
+
+/* ── Reset ───────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lora',Georgia,serif;
+  background-color:var(--bg);
+  /* textura de fondo — SOLO multiplicada */
+  background-image:url("assets/textura-papel.png");
+  background-size:600px auto;
+  background-repeat:repeat;
+  color:var(--texto);
+  font-size:18px;
+  line-height:1.72;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1120px,92%);margin:auto}
+.sec{padding:76px 0}
+.centro{text-align:center}
+
+/* ── Blend helper — elimina fundo branco dos assets ── */
+.blend{mix-blend-mode:multiply}
+
+/* ── Tipografía ──────────────────────────────── */
+h1,h2,h3,h4{
+  font-family:'Playfair Display',Georgia,serif;
+  line-height:1.1;
+  color:var(--verde);
+}
+h1{font-size:clamp(2.8rem,6vw,5.2rem);letter-spacing:-.03em}
+h2{font-size:clamp(1.9rem,3.8vw,3.2rem)}
+h3{font-size:1.35rem}
+
+/* ── Topbar ──────────────────────────────────── */
+.topbar{
+  background:var(--verde);
+  color:#FFF4DC;
+  font-family:'Lora',serif;
+  font-size:.8rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:11px 0;
+  text-align:center;
+}
+.topbar-inner{
+  display:flex;gap:28px;justify-content:center;flex-wrap:wrap;
+  align-items:center;
+}
+.topbar-inner span{display:flex;align-items:center;gap:6px}
+
+/* ── HERO ────────────────────────────────────── */
+.hero{
+  background-color:var(--bg);
+  position:relative;
+  overflow:hidden;
+  padding:64px 0 80px;
+}
+/* hero-bg con blend */
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:url("assets/hero-bg.png") right bottom/auto 95% no-repeat;
+  mix-blend-mode:multiply;
+  opacity:.18;
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:48px;
+  position:relative;
+  z-index:1;
+}
+.hero-marca{
+  font-family:'Lora',serif;
+  font-size:.78rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--oro);
+  margin-bottom:16px;
+}
+h1 em{color:var(--vino);font-style:normal}
+.hero-bajada{
+  font-size:1.12rem;
+  color:var(--gris);
+  max-width:560px;
+  margin:18px 0 32px;
+  line-height:1.8;
+}
+.hero-libros{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  align-items:end;
+}
+/* covers con blend — fundo branco desaparece */
+.hero-libros img{
+  mix-blend-mode:multiply;
+  filter:drop-shadow(0 20px 28px rgba(42,30,16,.22));
+}
+
+/* ── Botones ─────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 32px;
+  font-family:'Playfair Display',serif;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  border:none;cursor:pointer;
+  transition:all .22s;
+  text-align:center;
+}
+.btn-primario{
+  background:var(--vino);
+  color:#FFF8EE;
+  box-shadow:0 10px 28px rgba(107,26,20,.28);
+}
+.btn-primario:hover{background:#831F18;transform:translateY(-2px);box-shadow:0 14px 36px rgba(107,26,20,.38)}
+.btn-secundario{
+  background:transparent;
+  color:var(--verde);
+  border:2px solid rgba(26,58,26,.3);
+}
+.btn-secundario:hover{border-color:var(--verde);background:rgba(26,58,26,.05)}
+.botones{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+
+/* ── Strip beneficios ────────────────────────── */
+.strip{
+  background:var(--verde);
+  padding:22px 0;
+}
+.strip-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  align-items:center;
+}
+.strip-item{
+  display:flex;align-items:center;gap:12px;
+}
+/* badges con blend */
+.strip-item img{
+  width:58px;height:58px;
+  object-fit:contain;
+  mix-blend-mode:screen;
+  flex-shrink:0;
+}
+.strip-item span{
+  font-family:'Lora',serif;
+  font-size:.88rem;
+  font-weight:500;
+  color:#FFF0CC;
+  letter-spacing:.04em;
+}
+
+/* ── Sección: problema ───────────────────────── */
+.problema{
+  background:var(--papel);
+  padding:76px 0;
+}
+.etiq{
+  display:inline-block;
+  font-family:'Lora',serif;
+  font-size:.78rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--oro);
+  margin-bottom:14px;
+}
+.divider{
+  width:min(760px,88%);
+  margin:0 auto 20px;
+  display:block;
+}
+/* dividers con blend */
+.divider.blend{mix-blend-mode:multiply;opacity:.55}
+
+.problema-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  margin-top:40px;
+}
+.prob-card{
+  background:var(--bg);
+  border-left:4px solid var(--oro);
+  padding:24px 22px;
+  display:flex;gap:16px;align-items:flex-start;
+}
+.prob-icono{font-size:1.6rem;flex-shrink:0;margin-top:2px}
+.prob-titulo{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;
+  color:var(--verde);
+  margin-bottom:5px;
+}
+.prob-texto{font-size:.92rem;color:var(--gris);line-height:1.7}
+
+/* ── Sección: qué es ─────────────────────────── */
+.que-es{
+  background:var(--verde);
+  padding:84px 0;
+  color:#FFF8EE;
+  position:relative;
+  overflow:hidden;
+}
+.que-es::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:url("assets/textura-papel.png") center/600px repeat;
+  mix-blend-mode:overlay;
+  opacity:.06;
+  pointer-events:none;
+}
+.que-es .etiq{color:var(--oro-c)}
+.que-es h2{color:#FFF8EE}
+.que-es p{color:rgba(255,248,238,.78);max-width:620px;font-size:1.05rem;line-height:1.85}
+
+.vols-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  margin-top:48px;
+}
+.vol-card{
+  border:1px solid rgba(212,170,80,.3);
+  padding:32px 28px;
+  background:rgba(255,255,255,.04);
+  position:relative;
+  transition:border-color .22s;
+}
+.vol-card:hover{border-color:var(--oro-c)}
+.vol-num{
+  position:absolute;top:16px;right:20px;
+  font-family:'Playfair Display',serif;
+  font-size:4.5rem;font-weight:700;
+  color:rgba(212,170,80,.12);
+  line-height:1;
+}
+.vol-etiq{
+  font-family:'Lora',serif;
+  font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--oro-c);margin-bottom:10px;display:block;
+}
+.vol-titulo{
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem;color:#FFF8EE;margin-bottom:18px;
+}
+.vol-caps{list-style:none;display:flex;flex-direction:column;gap:7px}
+.vol-caps li{
+  font-family:'Lora',serif;font-size:.92rem;
+  color:rgba(255,248,238,.6);
+  display:flex;align-items:center;gap:8px;
+}
+.vol-caps li::before{content:'—';color:var(--oro);flex-shrink:0}
+
+/* ── Video ───────────────────────────────────── */
+.video-sec{
+  background:var(--bg);
+  padding:76px 0;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:52px;
+  align-items:center;
+}
+.video-wrap{
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:var(--sombra);
+  border:6px solid var(--papel);
+}
+.video-wrap img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.play-btn{
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+  background:rgba(26,58,26,.15);
+  cursor:pointer;
+}
+.play-btn span{
+  width:80px;height:80px;border-radius:50%;
+  background:rgba(255,255,255,.9);
+  display:grid;place-items:center;
+  font-size:2rem;color:var(--vino);padding-left:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+/* floral con blend */
+.floral{
+  display:block;
+  width:min(600px,92%);
+  margin:0 auto 20px;
+  mix-blend-mode:multiply;
+  opacity:.6;
+}
+
+/* ── Capítulos ───────────────────────────────── */
+.caps-sec{
+  background:var(--papel);
+  padding:76px 0;
+}
+.caps-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:16px;
+  margin-top:40px;
+}
+.cap-card{
+  background:var(--blanco);
+  border:1px solid rgba(184,137,42,.18);
+  padding:20px 18px;
+  transition:all .22s;
+  cursor:default;
+}
+.cap-card:hover{
+  border-color:var(--oro);
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px rgba(26,58,26,.1);
+}
+.cap-n{
+  font-family:'Lora',serif;font-size:.73rem;
+  letter-spacing:.22em;color:var(--oro);
+  text-transform:uppercase;display:block;margin-bottom:6px;
+}
+.cap-t{
+  font-family:'Playfair Display',serif;
+  font-size:.98rem;color:var(--verde);
+  margin-bottom:6px;line-height:1.25;
+}
+.cap-p{font-family:'Lora',serif;font-style:italic;font-size:.82rem;color:var(--gris)}
+.cap-r{
+  display:block;margin-top:10px;
+  font-family:'Lora',serif;font-size:.75rem;color:var(--oro);
+  letter-spacing:.1em;border-top:1px solid rgba(184,137,42,.18);padding-top:8px;
+}
+
+/* ── Ingredientes ────────────────────────────── */
+.ing-sec{
+  background:var(--bg);
+  padding:76px 0;
+}
+.ing-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:12px;
+  margin-top:40px;
+}
+.ing-card{
+  background:var(--papel);
+  border-radius:12px;
+  padding:12px 8px;
+  text-align:center;
+  transition:transform .2s;
+  border:1px solid rgba(184,137,42,.1);
+}
+.ing-card:hover{transform:translateY(-4px)}
+/* ingredientes con blend */
+.ing-card img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+
+/* ── Preview páginas ─────────────────────────── */
+.preview-sec{
+  background:var(--papel);
+  padding:76px 0;
+}
+.preview-img{
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:var(--sombra);
+  border:6px solid var(--bg);
+}
+/* decoracion-mesa con blend */
+.mesa-deco{
+  width:100%;
+  mix-blend-mode:multiply;
+  opacity:.55;
+  display:block;
+  margin-top:20px;
+}
+
+/* ── Para quién ──────────────────────────────── */
+.pq-sec{
+  background:var(--blanco);
+  padding:76px 0;
+}
+.pq-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  margin-top:44px;
+}
+.pq-card{
+  padding:28px 24px;
+  border-top:3px solid var(--verde);
+  background:var(--bg);
+}
+.pq-i{font-size:2.2rem;margin-bottom:14px;display:block}
+.pq-t{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;color:var(--verde);margin-bottom:8px;
+}
+.pq-d{font-size:.9rem;color:var(--gris);line-height:1.72}
+
+/* ── Testimonios ─────────────────────────────── */
+.test-sec{
+  background:var(--verde);
+  padding:84px 0;
+  position:relative;
+  overflow:hidden;
+}
+.test-sec::before{
+  content:'';position:absolute;inset:0;
+  background:url("assets/textura-papel.png") center/600px repeat;
+  mix-blend-mode:overlay;opacity:.05;pointer-events:none;
+}
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  margin-top:44px;
+}
+.test-card{
+  padding:28px 24px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(212,170,80,.2);
+  position:relative;
+}
+.test-q{
+  font-family:'Playfair Display',serif;
+  font-size:4.5rem;color:var(--oro);opacity:.25;
+  position:absolute;top:8px;left:18px;line-height:1;
+}
+.test-t{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:1.02rem;color:rgba(255,248,238,.85);
+  line-height:1.75;margin-bottom:20px;padding-top:22px;
+}
+.test-a{display:flex;align-items:center;gap:12px}
+.test-av{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--verde-m);border:2px solid var(--oro);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--oro-c);
+  flex-shrink:0;
+}
+.test-n{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--oro-c)}
+.test-l{font-family:'Lora',serif;font-size:.8rem;color:rgba(255,248,238,.4);letter-spacing:.04em}
+
+/* ── Lo que recibes ──────────────────────────── */
+.recibe-sec{background:var(--bg);padding:76px 0}
+.recibe-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:56px;align-items:start;
+  margin-top:44px;
+}
+.recibe-lista{list-style:none;display:flex;flex-direction:column;gap:18px}
+.rec-item{
+  display:flex;gap:14px;align-items:flex-start;
+  padding-bottom:18px;
+  border-bottom:1px solid rgba(184,137,42,.18);
+}
+.rec-check{
+  width:26px;height:26px;
+  background:var(--verde);color:var(--oro-c);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;flex-shrink:0;margin-top:2px;
+  font-family:'Lora',serif;font-weight:500;
+}
+.rec-tit{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;color:var(--verde);margin-bottom:3px;
+}
+.rec-desc{font-size:.88rem;color:var(--gris);line-height:1.65}
+
+/* Mockup libro */
+.mockup{
+  background:var(--verde);
+  padding:36px 28px;
+  text-align:center;
+  position:relative;
+  box-shadow:12px 12px 0 var(--oro);
+}
+.mockup::before{
+  content:'';position:absolute;inset:10px;
+  border:1px solid rgba(212,170,80,.25);pointer-events:none;
+}
+/* cta-books con blend */
+.mockup-cover{
+  width:100%;
+  mix-blend-mode:multiply;
+  display:block;
+  margin:0 auto 20px;
+  filter:drop-shadow(0 14px 20px rgba(0,0,0,.3));
+}
+.mockup-tit{
+  font-family:'Playfair Display',serif;font-size:.85rem;
+  color:var(--oro-c);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;
+}
+.mockup-nom{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.4rem;color:#FFF8EE;margin-bottom:6px;
+}
+.mockup-sub{
+  font-family:'Lora',serif;font-size:.78rem;
+  color:var(--oro);letter-spacing:.18em;text-transform:uppercase;
+}
+.mockup-hr{
+  width:50px;height:1.5px;background:var(--oro);margin:16px auto;
+}
+.mockup-nums{
+  display:flex;justify-content:space-around;
+  padding-top:14px;border-top:1px solid rgba(212,170,80,.2);
+  margin-top:14px;
+}
+.mn{text-align:center}
+.mn-v{
+  font-family:'Playfair Display',serif;font-size:1.6rem;
+  color:var(--oro-c);display:block;line-height:1;
+}
+.mn-l{
+  font-family:'Lora',serif;font-size:.68rem;
+  color:rgba(255,248,238,.4);letter-spacing:.14em;text-transform:uppercase;
+}
+
+/* ── Garantía ────────────────────────────────── */
+.garantia-sec{background:var(--papel);padding:64px 0;text-align:center}
+.garantia-box{
+  max-width:620px;margin:0 auto;
+  border:1px solid rgba(184,137,42,.3);
+  padding:44px 36px;background:var(--blanco);
+}
+.sello{
+  width:88px;height:88px;border-radius:50%;
+  background:var(--verde);margin:0 auto 22px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:3px solid var(--oro);
+}
+.sello-n{
+  font-family:'Playfair Display',serif;
+  font-size:1.9rem;font-weight:700;color:var(--oro-c);line-height:1;
+}
+.sello-t{
+  font-family:'Lora',serif;font-size:.6rem;
+  letter-spacing:.14em;color:rgba(255,248,238,.55);text-transform:uppercase;
+}
+.garantia-t{font-size:1.45rem;color:var(--verde);margin-bottom:10px}
+.garantia-d{font-size:.95rem;color:var(--gris);line-height:1.8;max-width:480px;margin:0 auto}
+
+/* ── CTA / Precio ────────────────────────────── */
+.cta-sec{
+  background:var(--verde);
+  padding:96px 0;
+  position:relative;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;inset:0;
+  background:url("assets/textura-papel.png") center/600px repeat;
+  mix-blend-mode:overlay;opacity:.05;pointer-events:none;
+}
+.cta-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:48px;align-items:center;
+  position:relative;z-index:1;
+}
+/* cta-books con blend */
+.cta-libros{
+  mix-blend-mode:multiply;
+  filter:drop-shadow(0 20px 28px rgba(0,0,0,.35));
+  display:block;width:100%;
+}
+.cta-etiq{
+  font-family:'Lora',serif;font-size:.78rem;
+  letter-spacing:.28em;color:var(--oro-c);text-transform:uppercase;
+  margin-bottom:14px;display:block;
+}
+.cta-sec h2{color:#FFF8EE;margin-bottom:14px}
+.cta-desc{color:rgba(255,248,238,.72);font-size:1.02rem;line-height:1.8;margin-bottom:22px}
+.precio-antes{
+  font-family:'Lora',serif;font-size:1.05rem;
+  color:rgba(255,248,238,.3);text-decoration:line-through;margin-bottom:4px;
+}
+.precio-valor{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,5vw,4.2rem);font-weight:700;
+  color:var(--oro-c);line-height:1;margin-bottom:6px;
+}
+.precio-desc{
+  font-family:'Lora',serif;font-size:.85rem;
+  color:rgba(255,248,238,.42);letter-spacing:.07em;margin-bottom:28px;
+}
+.incluye{
+  list-style:none;display:flex;flex-direction:column;gap:10px;
+  margin-bottom:30px;
+}
+.incluye li{
+  font-family:'Lora',serif;font-size:.95rem;
+  color:rgba(255,248,238,.72);
+  display:flex;align-items:center;gap:8px;
+}
+.incluye li::before{content:'✦';color:var(--oro);font-size:.65rem;flex-shrink:0}
+.btn-comprar{
+  display:block;width:100%;text-align:center;
+  background:var(--oro);color:var(--verde);
+  font-family:'Playfair Display',serif;
+  font-size:1.08rem;font-weight:700;
+  padding:18px 24px;letter-spacing:.03em;
+  border:none;cursor:pointer;
+  transition:all .22s;margin-bottom:12px;
+}
+.btn-comprar:hover{background:var(--oro-c);transform:translateY(-2px);box-shadow:0 12px 36px rgba(184,137,42,.38)}
+.seguro{
+  font-family:'Lora',serif;font-size:.8rem;
+  color:rgba(255,248,238,.3);letter-spacing:.07em;
+}
+
+/* ── FAQ ─────────────────────────────────────── */
+.faq-sec{background:var(--blanco);padding:76px 0}
+.faq-lista{max-width:700px;margin:44px auto 0;display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid rgba(184,137,42,.18)}
+details.faq-item{padding:0}
+.faq-item summary{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;color:var(--verde);
+  padding:22px 0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  list-style:none;user-select:none;
+}
+.faq-item summary::after{
+  content:'+';font-size:1.5rem;color:var(--oro);
+  flex-shrink:0;transition:transform .22s;
+}
+details[open] .faq-item summary::after{transform:rotate(45deg)}
+.faq-r{padding:0 0 20px;font-size:.95rem;color:var(--gris);line-height:1.8;max-width:620px}
+.aviso{
+  max-width:700px;margin:28px auto 0;
+  background:rgba(184,137,42,.1);
+  border-left:4px solid var(--oro);
+  padding:18px 20px;
+  font-size:.88rem;color:var(--gris);line-height:1.75;
+}
+
+/* ── Footer ──────────────────────────────────── */
+footer{
+  background:#0F2010;
+  color:rgba(255,240,200,.4);
+  text-align:center;
+  font-family:'Lora',serif;
+  font-size:.82rem;padding:28px 0;
+  letter-spacing:.06em;
+}
+footer a{color:rgba(212,170,80,.5);text-decoration:none}
+footer a:hover{color:var(--oro-c)}
+
+/* ── Reveal ──────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.vis{opacity:1;transform:none}
+
+/* ── Responsive ──────────────────────────────── */
+@media(max-width:960px){
+  .hero-grid,.split,.recibe-grid,.cta-grid,.vols-grid{grid-template-columns:1fr}
+  .strip-grid{grid-template-columns:repeat(2,1fr)}
+  .ing-grid{grid-template-columns:repeat(4,1fr)}
+  .cta-libros{max-width:480px;margin:0 auto}
+}
+@media(max-width:600px){
+  body{font-size:17px}
+  .sec,.caps-sec,.ing-sec,.preview-sec,.pq-sec,.test-sec,.recibe-sec,.garantia-sec,.cta-sec,.faq-sec{padding:54px 0}
+  .strip-grid{grid-template-columns:1fr}
+  .ing-grid{grid-template-columns:repeat(3,1fr)}
+  .caps-grid{grid-template-columns:1fr 1fr}
+  .botones .btn{width:100%}
+  .garantia-box{padding:30px 20px}
+  h1{font-size:2.5rem}
+}
+@media(max-width:380px){
+  .caps-grid,.ing-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-inner">
+      <span>🌿 Remedios probados por generaciones</span>
+      <span>📱 PDF — léelo en tu celular</span>
+      <span>🔒 Compra segura por Hotmart</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-marca">Narrativas Emocionales · Colección Especial</p>
+        <h1>La Sabiduría<br>que <em>Heredamos</em></h1>
+        <p style="font-family:'Lora',serif;font-size:1.08rem;color:var(--gris);margin:14px 0 0;max-width:540px;line-height:1.8;">
+          Los remedios de las abuelas mexicanas siempre funcionaron.<br>
+          El problema fue que nadie los escribió a tiempo.
+        </p>
+        <p class="hero-bajada">
+          112 recetas de plantas medicinales, organizadas por condición de salud,
+          con instrucciones paso a paso, cantidades exactas y lo que la ciencia
+          moderna confirma de cada una.
+          <strong style="color:var(--verde)">El saber que se estaba perdiendo, ahora en tus manos.</strong>
+        </p>
+        <div class="botones">
+          <a class="btn btn-primario" href="#comprar">Quiero el Compendio Completo</a>
+          <a class="btn btn-secundario" href="#que-es">Ver el contenido</a>
+        </div>
+      </div>
+      <div class="hero-libros reveal">
+        <img src="assets/cover-vol1.png" alt="La Sabiduría que Heredamos — Volumen I">
+        <img src="assets/cover-vol2.png" alt="La Sabiduría que Heredamos — Volumen II">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-grid">
+      <div class="strip-item"><img src="assets/badge-natural.png" alt=""><span>100% ingredientes naturales</span></div>
+      <div class="strip-item"><img src="assets/badge-recetas.png" alt=""><span>Recetas probadas y verificadas</span></div>
+      <div class="strip-item"><img src="assets/badge-familia.png" alt=""><span>Para toda la familia</span></div>
+      <div class="strip-item"><img src="assets/badge-sabiduria.png" alt=""><span>Sabiduría ancestral mexicana</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problema">
+  <div class="wrap centro">
+    <span class="etiq">¿Por qué existe este compendio?</span>
+    <h2 style="max-width:700px;margin:0 auto 14px;">¿Cuántos remedios de tu abuela<br>ya se fueron con ella?</h2>
+    <img class="divider blend" src="assets/divider-floral.png" alt="">
+    <p style="max-width:640px;margin:0 auto 16px;color:var(--gris);font-size:1.02rem;line-height:1.85;">
+      Las abuelas mexicanas cargaban un saber médico de siglos. Sabían exactamente qué hierba usar,
+      cómo prepararla, en qué cantidad y durante cuánto tiempo. Ese conocimiento se pasaba de voz en voz
+      — y se iba perdiendo con cada generación que no lo escribió.
+    </p>
+    <p style="max-width:640px;margin:0 auto;color:var(--gris);font-size:1.02rem;line-height:1.85;">
+      Este compendio recoge ese saber, lo contrasta con la investigación científica moderna,
+      y lo entrega en instrucciones que cualquier persona puede seguir en casa hoy mismo.
+    </p>
+    <div class="problema-grid" style="text-align:left;">
+      <div class="prob-card reveal">
+        <span class="prob-icono">🦴</span>
+        <div>
+          <p class="prob-titulo">Las rodillas que duelen más con el frío</p>
+          <p class="prob-texto">El ungüento de romero que los frailes de Michoacán preparaban — y que la ciencia confirma reduce la inflamación articular.</p>
+        </div>
+      </div>
+      <div class="prob-card reveal">
+        <span class="prob-icono">😴</span>
+        <div>
+          <p class="prob-titulo">El insomnio que llega después de los 60</p>
+          <p class="prob-texto">El té de orégano que las ticitl nahuas preparaban antes de dormir — actúa sobre los mismos receptores GABA que los ansiolíticos, sin crear dependencia.</p>
+        </div>
+      </div>
+      <div class="prob-card reveal">
+        <span class="prob-icono">🩺</span>
+        <div>
+          <p class="prob-titulo">La presión alta que no cede</p>
+          <p class="prob-texto">El ajo y la flor de jamaica comparados directamente con el lisinopril en un estudio del IMSS — con resultados sorprendentes.</p>
+        </div>
+      </div>
+      <div class="prob-card reveal">
+        <span class="prob-icono">🧠</span>
+        <div>
+          <p class="prob-titulo">La memoria que se va diluyendo</p>
+          <p class="prob-texto">El ginkgo biloba que los griegos olímpicos ya usaban hace 2,500 años — y que la Universidad de Northumbria confirmó en 2013 que mejora la memoria en un 60-75%.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<section id="que-es" class="que-es">
+  <div class="wrap" style="position:relative;z-index:1;">
+    <div class="centro" style="margin-bottom:16px;">
+      <span class="etiq">El Compendio</span>
+      <h2 style="color:#FFF8EE;max-width:600px;margin:0 auto 18px;">Dos volúmenes.<br>Un saber de siglos.</h2>
+      <p style="margin:0 auto;">
+        No es una colección de tips de internet. Es un archivo metódico de remedios
+        que funcionaron durante generaciones, con instrucciones precisas y el respaldo
+        de lo que la ciencia moderna ha confirmado.
+      </p>
+    </div>
+    <div class="vols-grid">
+      <div class="vol-card reveal">
+        <span class="vol-num">I</span>
+        <span class="vol-etiq">Volumen I · Caps. 1 al 6</span>
+        <h3 class="vol-titulo">El Cuerpo que Sostiene</h3>
+        <ul class="vol-caps">
+          <li>Rodillas y articulaciones</li>
+          <li>Circulación y várices</li>
+          <li>Inflamación crónica</li>
+          <li>Insomnio y sueño</li>
+          <li>Diabetes y glucosa</li>
+          <li>Riñones y vías urinarias</li>
+        </ul>
+      </div>
+      <div class="vol-card reveal">
+        <span class="vol-num">II</span>
+        <span class="vol-etiq">Volumen II · Caps. 7 al 13</span>
+        <h3 class="vol-titulo">La Mente y la Vida</h3>
+        <ul class="vol-caps">
+          <li>Memoria y concentración</li>
+          <li>Fuerza y músculos</li>
+          <li>Presión arterial</li>
+          <li>Vista y ojos</li>
+          <li>Huesos y osteoporosis</li>
+          <li>Pies</li>
+          <li>Digestión e intestino</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="video-sec">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <img class="floral" src="assets/floral-top.png" alt="">
+        <span class="etiq">Conócenos</span>
+        <h2 style="margin-bottom:16px;">El saber de las abuelas, contado con cariño.</h2>
+        <p style="color:var(--gris);font-size:1rem;line-height:1.85;margin-bottom:16px;">
+          Cada receta en este compendio viene de una historia real — mujeres mexicanas que cargaron
+          ese conocimiento en silencio, generación tras generación.
+        </p>
+        <p style="color:var(--gris);font-size:1rem;line-height:1.85;margin-bottom:28px;">
+          Aquí puedes ver la presentación del canal y entender de dónde viene este trabajo
+          y por qué cada receta fue investigada antes de incluirse.
+        </p>
+        <a class="btn btn-primario" href="#comprar">Quiero el Compendio</a>
+      </div>
+      <div class="video-wrap" id="video-player">
+        <img src="assets/video-thumb.png" alt="Video de presentación">
+        <div class="play-btn" onclick="this.parentElement.innerHTML='<iframe width=\'100%\' height=\'100%\' style=\'aspect-ratio:16/9;display:block\' src=\'https://www.youtube.com/embed/VIDEO_ID_AQUI?autoplay=1\' frameborder=\'0\' allowfullscreen></iframe>'">
+          <span>▶</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPÍTULOS -->
+<section class="caps-sec">
+  <div class="wrap">
+    <div class="centro" style="margin-bottom:8px;">
+      <span class="etiq">Contenido completo</span>
+      <h2>Los 13 capítulos del compendio</h2>
+    </div>
+    <div class="caps-grid">
+      <div class="cap-card reveal"><span class="cap-n">Cap. 01</span><h3 class="cap-t">Rodillas y Articulaciones</h3><p class="cap-p">Romero · Gelatina · Chile de Árbol</p><span class="cap-r">12 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 02</span><h3 class="cap-t">Circulación y Várices</h3><p class="cap-p">Romero · Tomatillo · Castaño de Indias</p><span class="cap-r">12 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 03</span><h3 class="cap-t">Inflamación</h3><p class="cap-p">Cúrcuma · Jengibre</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 04</span><h3 class="cap-t">Insomnio y Sueño</h3><p class="cap-p">Orégano · Pepitas de Calabaza</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 05</span><h3 class="cap-t">Diabetes y Glucosa</h3><p class="cap-p">Nopal · Vinagre y Canela</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 06</span><h3 class="cap-t">Riñones y Vías Urinarias</h3><p class="cap-p">Cola de Caballo · Cabellos de Elote</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 07</span><h3 class="cap-t">Memoria y Concentración</h3><p class="cap-p">Ginkgo Biloba · Romero para la Mente</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 08</span><h3 class="cap-t">Fuerza y Músculos</h3><p class="cap-p">Huevo · Avena con Leche</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 09</span><h3 class="cap-t">Presión Arterial</h3><p class="cap-p">Ajo · Jamaica / Hibisco</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 10</span><h3 class="cap-t">Vista y Ojos</h3><p class="cap-p">Zanahoria y Luteína · Eufrasia</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 11</span><h3 class="cap-t">Huesos y Osteoporosis</h3><p class="cap-p">Leche y Lácteos · Cola de Caballo</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 12</span><h3 class="cap-t">Pies</h3><p class="cap-p">Baños de Hierbas · Aceite de Coco</p><span class="cap-r">8 recetas</span></div>
+      <div class="cap-card reveal"><span class="cap-n">Cap. 13</span><h3 class="cap-t">Digestión e Intestino</h3><p class="cap-p">Papaya · Sábila / Aloe Vera</p><span class="cap-r">8 recetas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTES -->
+<section class="ing-sec">
+  <div class="wrap centro">
+    <span class="etiq">Lo que encontrarás</span>
+    <h2>Plantas que sanan — presentes en el compendio</h2>
+    <img class="divider blend" src="assets/divider-floral.png" alt="">
+    <div class="ing-grid">
+      <div class="ing-card reveal"><img src="assets/ingrediente-manzanilla.png" alt="Manzanilla"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-sabila.png" alt="Sábila"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-oregano.png" alt="Orégano"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-romero.png" alt="Romero"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-clavo.png" alt="Clavo"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-eucalipto.png" alt="Eucalipto"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-jamaica.png" alt="Jamaica"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-hierbabuena.png" alt="Hierbabuena"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-ajo.png" alt="Ajo"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-calendula.png" alt="Caléndula"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-laurel.png" alt="Laurel"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-cola-de-caballo.png" alt="Cola de caballo"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-tomillo.png" alt="Tomillo"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-bugambilia.png" alt="Bugambilia"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-ruda.png" alt="Ruda"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-nopal.png" alt="Nopal"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-canela.png" alt="Canela"></div>
+      <div class="ing-card reveal"><img src="assets/ingrediente-y-muchos-mas.png" alt="Y muchos más"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section class="preview-sec">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="etiq">Diseño accesible</span>
+        <h2 style="margin-bottom:16px;">Hecho para leerse en celular,<br>sin esfuerzo</h2>
+        <p style="color:var(--gris);font-size:1rem;line-height:1.85;margin-bottom:14px;">
+          Tipografía grande, tablas claras, instrucciones separadas paso a paso.
+          No necesitas hacer zoom ni buscar qué sigue.
+          Cada receta está en su propia sección, fácil de encontrar.
+        </p>
+        <p style="color:var(--gris);font-size:1rem;line-height:1.85;margin-bottom:28px;">
+          Funciona en cualquier lector de PDF gratuito — en celular, tablet o computadora.
+          Y una vez descargado, es tuyo para siempre, sin necesidad de internet.
+        </p>
+        <a class="btn btn-primario" href="#comprar">Obtener el Compendio</a>
+      </div>
+      <div class="preview-img reveal">
+        <img src="assets/paginas-preview.png" alt="Páginas internas del compendio">
+      </div>
+    </div>
+    <img class="mesa-deco" src="assets/decoracion-mesa.png" alt="">
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="pq-sec">
+  <div class="wrap centro">
+    <span class="etiq">¿Para quién es?</span>
+    <h2>Este compendio es para ti si…</h2>
+    <div class="pq-grid" style="text-align:left;">
+      <div class="pq-card reveal">
+        <span class="pq-i">👵🏽</span>
+        <h3 class="pq-t">Eres mujer mayor de 55 años</h3>
+        <p class="pq-d">Y quieres atender tu salud con remedios probados, instrucciones claras y letras grandes. Sin complicaciones y sin salir a buscar productos raros.</p>
+      </div>
+      <div class="pq-card reveal">
+        <span class="pq-i">👨‍👩‍👧</span>
+        <h3 class="pq-t">Cuidas a tu mamá o tu abuela</h3>
+        <p class="pq-d">Y buscas remedios naturales confiables para sus condiciones crónicas — respaldados por tradición mexicana y por lo que la ciencia confirma.</p>
+      </div>
+      <div class="pq-card reveal">
+        <span class="pq-i">🌿</span>
+        <h3 class="pq-t">Confías en la medicina natural</h3>
+        <p class="pq-d">Y quieres recetas completas, no vagas referencias. Con cantidades exactas, tiempos precisos y contraindicaciones claras para cada remedio.</p>
+      </div>
+      <div class="pq-card reveal">
+        <span class="pq-i">🇲🇽</span>
+        <h3 class="pq-t">Vives en México o en EUA</h3>
+        <p class="pq-d">Todos los ingredientes se consiguen en mercados, herbolarias y supermercados. Sin importaciones, sin costos extras, sin ingredientes difíciles de encontrar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="test-sec">
+  <div class="wrap" style="position:relative;z-index:1;">
+    <div class="centro" style="margin-bottom:8px;">
+      <span class="etiq" style="color:var(--oro-c);">Lo que dicen</span>
+      <h2 style="color:#FFF8EE;">Las mujeres del canal</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <span class="test-q">"</span>
+        <p class="test-t">El ungüento de romero para las rodillas lo uso cada mañana desde hace tres semanas. Mis hijos no podían creer que bajó la hinchazón. Lo compartí con todas mis comadres.</p>
+        <div class="test-a">
+          <div class="test-av">R</div>
+          <div><p class="test-n">Rosario M.</p><p class="test-l">Guadalajara, Jalisco</p></div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <span class="test-q">"</span>
+        <p class="test-t">Tengo 71 años y el insomnio me tenía desesperada. Con el té de orégano empecé a dormir desde la primera semana. Tan simple como eso. No lo podía creer.</p>
+        <div class="test-a">
+          <div class="test-av">C</div>
+          <div><p class="test-n">Consuelo V.</p><p class="test-l">Ciudad de México</p></div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <span class="test-q">"</span>
+        <p class="test-t">Mi mamá tiene diabetes y le preparamos el licuado de nopal todos los días. Su doctora notó mejoría en los análisis y nos preguntó qué habíamos cambiado.</p>
+        <div class="test-a">
+          <div class="test-av">L</div>
+          <div><p class="test-n">Lupita R.</p><p class="test-l">Houston, Texas</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUE RECIBES -->
+<section class="recibe-sec">
+  <div class="wrap">
+    <div class="recibe-grid">
+      <div>
+        <span class="etiq">Lo que recibes</span>
+        <h2 style="margin-bottom:14px;">Todo lo que incluye<br>el compendio</h2>
+        <div style="width:60px;height:1.5px;background:var(--oro);margin:0 0 28px;"></div>
+        <ul class="recibe-lista">
+          <li class="rec-item reveal">
+            <span class="rec-check">✓</span>
+            <div><p class="rec-tit">Volumen I — Caps. 1 al 6</p><p class="rec-desc">Rodillas, várices, inflamación, insomnio, diabetes, riñones. 56 recetas completas en PDF.</p></div>
+          </li>
+          <li class="rec-item reveal">
+            <span class="rec-check">✓</span>
+            <div><p class="rec-tit">Volumen II — Caps. 7 al 13</p><p class="rec-desc">Memoria, fuerza, presión, vista, huesos, pies, digestión. 56 recetas completas en PDF.</p></div>
+          </li>
+          <li class="rec-item reveal">
+            <span class="rec-check">✓</span>
+            <div><p class="rec-tit">Instrucciones paso a paso</p><p class="rec-desc">Cantidades exactas, tiempos precisos, modo de uso claro y contraindicaciones en cada receta.</p></div>
+          </li>
+          <li class="rec-item reveal">
+            <span class="rec-check">✓</span>
+            <div><p class="rec-tit">Tipografía accesible — celular</p><p class="rec-desc">Fuente grande, tablas claras. Diseñado para leerse cómodamente en teléfono, sin hacer zoom.</p></div>
+          </li>
+          <li class="rec-item reveal">
+            <span class="rec-check">✓</span>
+            <div><p class="rec-tit">Descarga inmediata · PDF</p><p class="rec-desc">Lo recibes al instante en tu correo. Tuyo para siempre en cualquier dispositivo.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="mockup reveal">
+        <img class="mockup-cover" src="assets/cta-books.png" alt="Compendio La Sabiduría que Heredamos">
+        <p class="mockup-tit">Narrativas Emocionales</p>
+        <p class="mockup-nom">La Sabiduría<br>que Heredamos</p>
+        <p class="mockup-sub">Compendio de Recetas</p>
+        <div class="mockup-hr"></div>
+        <div class="mockup-nums">
+          <div class="mn"><span class="mn-v">112</span><span class="mn-l">Recetas</span></div>
+          <div class="mn"><span class="mn-v">13</span><span class="mn-l">Capítulos</span></div>
+          <div class="mn"><span class="mn-v">328</span><span class="mn-l">Páginas</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTÍA -->
+<section class="garantia-sec">
+  <div class="wrap centro">
+    <div class="garantia-box reveal">
+      <div class="sello">
+        <span class="sello-n">7</span>
+        <span class="sello-t">días</span>
+      </div>
+      <h3 class="garantia-t">Garantía de satisfacción completa</h3>
+      <p class="garantia-d">
+        Si por cualquier razón el compendio no cumple tus expectativas,
+        te devolvemos el dinero completo dentro de los primeros 7 días.
+        Sin preguntas. Sin trámites complicados.
+        Tu confianza importa más que cualquier venta.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA PRECIO -->
+<section id="comprar" class="cta-sec">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <img class="cta-libros" src="assets/cta-books.png" alt="La Sabiduría que Heredamos — Compendio Completo">
+      </div>
+      <div>
+        <span class="cta-etiq">Tu inversión</span>
+        <h2 style="font-size:clamp(1.7rem,3.2vw,2.6rem);">El saber de generaciones,<br>en tus manos hoy.</h2>
+        <p class="cta-desc">
+          Dos volúmenes PDF. 112 recetas con instrucciones paso a paso.
+          Descarga inmediata. Tuyo para siempre.
+        </p>
+        <p class="precio-antes">Precio regular: $299 MXN</p>
+        <p class="precio-valor">$149 <span style="font-size:1.8rem;">MXN</span></p>
+        <p class="precio-desc">Precio de lanzamiento · Pago único · Descarga inmediata</p>
+        <ul class="incluye">
+          <li>Volumen I (168 páginas) — Caps. 1 al 6</li>
+          <li>Volumen II (160 páginas) — Caps. 7 al 13</li>
+          <li>112 recetas completas paso a paso</li>
+          <li>PDF — celular, tablet o computadora</li>
+          <li>Garantía de 7 días — sin riesgo</li>
+        </ul>
+        <a href="https://pay.hotmart.com/TU-LINK-AQUI" class="btn-comprar">
+          Quiero el Compendio Completo — $149 MXN
+        </a>
+        <p class="seguro">🔒 Pago seguro por Hotmart · Entrega inmediata por correo electrónico</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="wrap">
+    <h2 class="centro" style="margin-bottom:8px;">Preguntas frecuentes</h2>
+    <div class="faq-lista">
+      <details class="faq-item">
+        <summary>¿Cómo recibo el compendio después de comprar?</summary>
+        <p class="faq-r">Al completar tu pago recibirás inmediatamente un correo de Hotmart con los links de descarga de los dos volúmenes en PDF. Si no llega en 10 minutos, revisa tu carpeta de spam o escríbenos.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo leerlo en mi celular?</summary>
+        <p class="faq-r">Sí. El compendio fue diseñado específicamente para leerse en teléfono celular. Fuente grande, tablas claras, sin necesidad de hacer zoom. Funciona en cualquier lector de PDF gratuito.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Los remedios reemplazan al médico?</summary>
+        <p class="faq-r">No. El compendio es claro al respecto: los remedios son coadyuvantes, no sustitutos del tratamiento médico. Cada receta incluye contraindicaciones y señales para consultar al médico.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Los ingredientes se consiguen en México y en EUA?</summary>
+        <p class="faq-r">Todos están disponibles en mercados, herbolarias y supermercados mexicanos. En EUA, la mayoría se encuentra en tiendas de productos hispanos. El compendio incluye el nombre en inglés de cada planta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Son recetas difíciles de preparar?</summary>
+        <p class="faq-r">No. Las más elaboradas tienen 7-8 pasos sencillos. La mayoría son tés, licuados, ungüentos o compresas que cualquier persona puede preparar en casa con utensilios comunes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si no quedo satisfecha?</summary>
+        <p class="faq-r">Tienes 7 días de garantía total. Si no quedas satisfecha, escribes a nuestro correo y te devolvemos el dinero completo sin preguntas. Así de simple.</p>
+      </details>
+    </div>
+    <div class="aviso">
+      <strong>Aviso importante:</strong> Este material tiene finalidad educativa e informativa.
+      Las recetas tradicionales no sustituyen diagnóstico, tratamiento ni orientación médica profesional.
+      Personas con enfermedades crónicas, alergias, embarazo o uso de medicamentos deben consultar
+      a un profesional de salud antes de utilizar cualquier preparación.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:8px;color:rgba(255,240,200,.55);">La Sabiduría que Heredamos · Narrativas Emocionales</p>
+    <p>
+      <a href="https://youtube.com/@narrativasemocionalesoficial" target="_blank">@narrativasemocionalesoficial</a>
+      &nbsp;·&nbsp;
+      <a href="#">Términos y condiciones</a>
+      &nbsp;·&nbsp;
+      <a href="#">Privacidad</a>
+      &nbsp;·&nbsp;
+      <a href="#">Contacto</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+
+</body>
+</html>
