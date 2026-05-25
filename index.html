@@ -1103,7 +1103,7 @@ footer a:hover{color:var(--oro-c)}
           <li>PDF — celular, tablet o computadora</li>
           <li>Garantía de 7 días — sin riesgo</li>
         </ul>
-        <a href="https://pay.hotmart.com/I105684339W" class="btn-comprar">
+        <a onclick="return false;" href="https://pay.hotmart.com/I105684339W?checkoutMode=2" class="btn-comprar hotmart-fb hotmart__button-checkout">
           Quiero el Compendio Completo — $149 MXN
         </a>
         <p class="seguro">🔒 Pago seguro por Hotmart · Entrega inmediata por correo electrónico</p>
@@ -1188,6 +1188,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 </script>
 
+<!-- Hotmart Checkout Widget -->
+<script type="text/javascript">
+  function importHotmart(){
+    var imported = document.createElement('script');
+    imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+    document.head.appendChild(imported);
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+    document.head.appendChild(link);
+  }
+  importHotmart();
+</script>
+
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                         
